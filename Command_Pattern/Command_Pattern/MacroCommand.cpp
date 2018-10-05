@@ -27,8 +27,13 @@ void MacroCommand::execute()
 
 	for (iter = commands.begin(); iter != commands.end(); ++iter)
 	{
-		(*iter)->execute();
+		(*iter)->undo();
 	}
 
 	std::cout << "executed" << std::endl;
+}
+
+void MacroCommand::undo()
+{
+	
 }

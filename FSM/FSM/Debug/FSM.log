@@ -1,0 +1,3 @@
+﻿  01_hello_SDL.cpp
+c:\users\gameuser\desktop\game_engineering\fsm\fsm\01_hello_sdl.cpp(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  FSM.vcxproj -> C:\Users\gameuser\Desktop\Game_Engineering\FSM\Debug\FSM.exe

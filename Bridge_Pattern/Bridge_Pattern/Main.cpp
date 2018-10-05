@@ -19,16 +19,16 @@ class Character
 {
 public: 
 	Character() {};
-	void Print() { std::cout << "Printing Character" << std::endl; };
+	//void Print() { std::cout << "Printing Character" << std::endl; };
 
 	// Page 2
-	//virtual void Draw() = 0;
+	virtual void Draw() = 0;
 };
 
 class HandleToCharacter
 {
 public:
-	HandleToCharacter() : character(new Character()) {};
+	//HandleToCharacter() : character(new Character()) {};
 	Character* operator->() { return character; } // Overloaded
 
 private:
@@ -48,13 +48,13 @@ private:
 int main(void)
 {
 	// Page 1
-	HandleToCharacter handle;
-	handle->Print();
+	//HandleToCharacter handle;
+	//handle->Print();
 
 	// Page 2
-	//DrawAPI* api = new DrawImpl();
-	//Character* character = new Player(api);
-	//character->Draw();
+	DrawAPI* api = new DrawImpl();
+	Character* character = new Player(api);
+	character->Draw();
 	
 	std::cin.get();
 }
