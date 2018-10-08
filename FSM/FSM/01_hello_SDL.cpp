@@ -61,7 +61,7 @@ int main( int argc, char* args[] )
 			inputHandler->handleInput(event);
 			
 		}
-		if (i == 0)
+		/*if (i == 0)
 		{
 			fsm.jumping();
 			std::this_thread::sleep_for(std::chrono::milliseconds(1000));
@@ -72,7 +72,7 @@ int main( int argc, char* args[] )
 			fsm.climbing();
 			std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 			i = 0;
-		}
+		}*/
 	}
 
 	//Destroy window
