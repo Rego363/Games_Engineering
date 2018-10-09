@@ -23,17 +23,27 @@ void MacroCommand::remove(Command* command)
 
 void MacroCommand::execute()
 {
-	std::list<Command*>::iterator iter;
-
-	for (iter = commands.begin(); iter != commands.end(); ++iter)
-	{
-		(*iter)->undo();
-	}
-
 	std::cout << "executed" << std::endl;
 }
 
 void MacroCommand::undo()
 {
-	
+
+	if (commands.size() > 0)
+	{
+		(*commands.rbegin())->undo();
+		undoneCommands.push_back(*commands.rbegin());
+		commands.pop_back();
+	}
+
+}
+
+void MacroCommand::redo()
+{
+	if (undoneCommands.size() > 0)
+	{
+		(*undoneCommands.rbegin())->redo();
+		commands.push_back(*undoneCommands.rbegin());
+		undoneCommands.pop_back();
+	}
 }

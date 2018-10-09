@@ -45,7 +45,10 @@ void InputHandler::handleInput(SDL_Event & event)
 			macro->add(buttonC_);
 			break;
 		case SDLK_z:
-			macro->execute();
+			macro->undo();
+			break;
+		case SDLK_s:
+			macro->redo();
 			break;
 
 
