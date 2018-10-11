@@ -13,6 +13,7 @@ MacroCommand::~MacroCommand()
 void MacroCommand::add(Command* command)
 {
 	commands.push_back(command);
+	undoneCommands.clear();
 }
 
 void MacroCommand::remove(Command* command)
