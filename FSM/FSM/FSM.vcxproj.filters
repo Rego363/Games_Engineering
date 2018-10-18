@@ -13,69 +13,87 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\FSM">
+      <UniqueIdentifier>{b617eda9-13ee-4e32-b3cd-8a3cc284fc17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObject">
+      <UniqueIdentifier>{97cd2a7b-db31-41e7-a341-fd129be2791f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Input">
+      <UniqueIdentifier>{0359b3d0-8af8-464f-885e-7ae886181117}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Animation">
+      <UniqueIdentifier>{b5d04d99-d128-4d1d-9cd0-23cc53159428}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\FSM">
+      <UniqueIdentifier>{39696d9a-8f37-4ff9-82a2-e42b2d096f85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameObject">
+      <UniqueIdentifier>{cdae793a-a6ef-450f-b2e7-cdfb58362e19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Input">
+      <UniqueIdentifier>{2ad9b457-46e6-4f8c-8017-b2d6fa029bbd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Animation">
+      <UniqueIdentifier>{a2aab7b3-0196-4a31-987b-9711bf35c7b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Debug">
+      <UniqueIdentifier>{b98dae96-04bc-44dc-98cf-3bd94bbdaba3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="01_hello_SDL.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\Animation\AnimatedSprite.cpp">
+      <Filter>Source Files\Animation</Filter>
     </ClCompile>
-    <ClCompile Include="InputHandler.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\FSM\Animation.cpp">
+      <Filter>Source Files\FSM</Filter>
     </ClCompile>
-    <ClCompile Include="MacroCommand.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\FSM\Climbing.cpp">
+      <Filter>Source Files\FSM</Filter>
     </ClCompile>
-    <ClCompile Include="Animation.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\FSM\Idle.cpp">
+      <Filter>Source Files\FSM</Filter>
     </ClCompile>
-    <ClCompile Include="Idle.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\FSM\Jumping.cpp">
+      <Filter>Source Files\FSM</Filter>
     </ClCompile>
-    <ClCompile Include="Jumping.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\GameObject\Player.cpp">
+      <Filter>Source Files\GameObject</Filter>
     </ClCompile>
-    <ClCompile Include="Climbing.cpp">
+    <ClCompile Include="src\Input\Input.cpp">
+      <Filter>Source Files\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Command.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Include\FSM\Animation.h">
+      <Filter>Header Files\FSM</Filter>
     </ClInclude>
-    <ClInclude Include="CrouchCommand.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Include\FSM\Climbing.h">
+      <Filter>Header Files\FSM</Filter>
     </ClInclude>
-    <ClInclude Include="FireCommand.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Include\FSM\Idle.h">
+      <Filter>Header Files\FSM</Filter>
     </ClInclude>
-    <ClInclude Include="InputHandler.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Include\FSM\Jumping.h">
+      <Filter>Header Files\FSM</Filter>
     </ClInclude>
-    <ClInclude Include="JumpCommand.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Include\FSM\State.h">
+      <Filter>Header Files\FSM</Filter>
     </ClInclude>
-    <ClInclude Include="MacroCommand.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Include\GameObject\Player.h">
+      <Filter>Header Files\GameObject</Filter>
     </ClInclude>
-    <ClInclude Include="MeleeCommand.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Include\Input\Input.h">
+      <Filter>Header Files\Input</Filter>
     </ClInclude>
-    <ClInclude Include="ShieldCommand.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Include\Animation\AnimatedSprite.h">
+      <Filter>Header Files\Animation</Filter>
     </ClInclude>
-    <ClInclude Include="Animation.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="State.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Idle.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Jumping.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Climbing.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Include\Debug\Debug.h">
+      <Filter>Header Files\Debug</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

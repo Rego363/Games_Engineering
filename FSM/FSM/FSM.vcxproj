@@ -70,12 +70,12 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>$(VC_IncludePath);C:\Users\gameuser\Downloads\SDL2-devel-2.0.8-VC\SDL2-2.0.8\include;$(WindowsSDK_IncludePath)</IncludePath>
-    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86;C:\Users\gameuser\Downloads\SDL2-devel-2.0.8-VC\SDL2-2.0.8\lib\x86</LibraryPath>
+    <IncludePath>C:\Users\gameuser\Downloads\SDL2_image-devel-2.0.3-VC\SDL2_image-2.0.3\include;C:\Users\gameuser\Desktop\Game_Engineering\FSM\FSM\Include;C:\SFML-2.5.0\include\;$(VC_IncludePath);C:\Users\gameuser\Downloads\SDL2-devel-2.0.8-VC\SDL2-2.0.8\include;$(WindowsSDK_IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\gameuser\Downloads\SDL2_image-devel-2.0.3-VC\SDL2_image-2.0.3\lib\x86;C:\SFML-2.5.0\lib;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86;C:\Users\gameuser\Downloads\SDL2-devel-2.0.8-VC\SDL2-2.0.8\lib\x86</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>$(VC_IncludePath);C:\Users\gameuser\Downloads\SDL2-devel-2.0.8-VC\SDL2-2.0.8\include;$(WindowsSDK_IncludePath)</IncludePath>
-    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86;C:\Users\gameuser\Downloads\SDL2-devel-2.0.8-VC\SDL2-2.0.8\lib\x86</LibraryPath>
+    <IncludePath>C:\Users\gameuser\Downloads\SDL2_image-devel-2.0.3-VC\SDL2_image-2.0.3\include;C:\Users\gameuser\Desktop\Game_Engineering\FSM\FSM\Include;C:\SFML-2.5.0\include\;$(VC_IncludePath);C:\Users\gameuser\Downloads\SDL2-devel-2.0.8-VC\SDL2-2.0.8\include;$(WindowsSDK_IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\gameuser\Downloads\SDL2_image-devel-2.0.3-VC\SDL2_image-2.0.3\lib\x86;C:\SFML-2.5.0\lib;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86;C:\Users\gameuser\Downloads\SDL2-devel-2.0.8-VC\SDL2-2.0.8\lib\x86</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -85,7 +85,7 @@
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;sfml-graphics.lib;sfml-window.lib;sfml-system.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
@@ -109,7 +109,7 @@
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;sfml-graphics.lib;sfml-window.lib;sfml-system.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
@@ -128,28 +128,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="01_hello_SDL.cpp" />
-    <ClCompile Include="Animation.cpp" />
-    <ClCompile Include="Climbing.cpp" />
-    <ClCompile Include="Idle.cpp" />
-    <ClCompile Include="InputHandler.cpp" />
-    <ClCompile Include="Jumping.cpp" />
-    <ClCompile Include="MacroCommand.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\Animation\AnimatedSprite.cpp" />
+    <ClCompile Include="src\FSM\Animation.cpp" />
+    <ClCompile Include="src\FSM\Climbing.cpp" />
+    <ClCompile Include="src\FSM\Idle.cpp" />
+    <ClCompile Include="src\FSM\Jumping.cpp" />
+    <ClCompile Include="src\GameObject\Player.cpp" />
+    <ClCompile Include="src\Input\Input.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Animation.h" />
-    <ClInclude Include="Climbing.h" />
-    <ClInclude Include="Command.h" />
-    <ClInclude Include="CrouchCommand.h" />
-    <ClInclude Include="FireCommand.h" />
-    <ClInclude Include="Idle.h" />
-    <ClInclude Include="InputHandler.h" />
-    <ClInclude Include="JumpCommand.h" />
-    <ClInclude Include="Jumping.h" />
-    <ClInclude Include="MacroCommand.h" />
-    <ClInclude Include="MeleeCommand.h" />
-    <ClInclude Include="ShieldCommand.h" />
-    <ClInclude Include="State.h" />
+    <ClInclude Include="Include\Animation\AnimatedSprite.h" />
+    <ClInclude Include="Include\Debug\Debug.h" />
+    <ClInclude Include="Include\FSM\Animation.h" />
+    <ClInclude Include="Include\FSM\Climbing.h" />
+    <ClInclude Include="Include\FSM\Idle.h" />
+    <ClInclude Include="Include\FSM\Jumping.h" />
+    <ClInclude Include="Include\FSM\State.h" />
+    <ClInclude Include="Include\GameObject\Player.h" />
+    <ClInclude Include="Include\Input\Input.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

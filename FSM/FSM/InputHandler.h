@@ -1,11 +1,6 @@
 #pragma once
 #include "Command.h"
-#include "FireCommand.h"
-#include "JumpCommand.h"
-#include "CrouchCommand.h"
-#include "MeleeCommand.h"
 #include "MacroCommand.h"
-#include "ShieldCommand.h"
 #include "Animation.h"
 #include <SDL.h>
 
