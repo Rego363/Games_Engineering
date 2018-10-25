@@ -4,6 +4,8 @@
 #include <FSM/Animation.h>
 #include <SDL.h>
 #include <iostream>
+#include <FSM/State.h>
+#include <Input/MacroCommand.h>
 
 class Input
 {
@@ -25,5 +27,11 @@ public:
 private:
 	Animation * fsm;
 	Action m_current;
+	State * buttonUP_;
+	State * buttonDown_;
+	State * buttonRight_;
+	State * buttonU_;
+	State * buttonR_;
+	MacroCommand * macro;
 };
 #endif

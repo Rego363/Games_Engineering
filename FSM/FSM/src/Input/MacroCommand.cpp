@@ -1,4 +1,4 @@
-#include "MacroCommand.h"
+#include <Input/MacroCommand.h>
 
 MacroCommand::MacroCommand()
 {
@@ -10,14 +10,15 @@ MacroCommand::~MacroCommand()
 	std::cout << "deconstructing" << std::endl;
 }
 
-void MacroCommand::add(Command* command)
+void MacroCommand::add(State* state)
 {
-	commands.push_back(command);
+	commands.push_back(state);
+	undoneCommands.clear();
 }
 
-void MacroCommand::remove(Command* command)
+void MacroCommand::remove(State* state)
 {
-	commands.remove(command);
+	commands.remove(state);
 }
 
 
@@ -26,23 +27,23 @@ void MacroCommand::execute()
 	std::cout << "executed" << std::endl;
 }
 
-void MacroCommand::undo()
+void MacroCommand::undo(Animation* anime)
 {
 
 	if (commands.size() > 0)
 	{
-		(*commands.rbegin())->undo();
+		(*commands.rbegin())->undo(anime);
 		undoneCommands.push_back(*commands.rbegin());
 		commands.pop_back();
 	}
 
 }
 
-void MacroCommand::redo()
+void MacroCommand::redo(Animation* anime)
 {
 	if (undoneCommands.size() > 0)
 	{
-		(*undoneCommands.rbegin())->redo();
+		(*undoneCommands.rbegin())->redo(anime);
 		commands.push_back(*undoneCommands.rbegin());
 		undoneCommands.pop_back();
 	}

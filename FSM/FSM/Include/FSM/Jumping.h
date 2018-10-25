@@ -10,6 +10,8 @@ public:
 	~Jumping() {};
 	void idle(Animation* a);
 	void climbing(Animation* a);
+	virtual void undo(Animation* a);
+	virtual void redo(Animation* a);
 };
 
 #endif // !IDLE_H

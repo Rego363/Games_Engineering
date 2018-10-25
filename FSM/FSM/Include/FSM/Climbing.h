@@ -12,6 +12,8 @@ public:
 	~Climbing() {};
 	void idle(Animation* a);
 	void jumping(Animation* a);
+	virtual void undo(Animation* a);
+	virtual void redo(Animation* a);
 };
 
 #endif // !IDLE_H

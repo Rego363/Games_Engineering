@@ -8,7 +8,8 @@
 class State
 {
 public:
-	virtual void handleInput() {}
+	State() {}
+	virtual ~State() {}
 
 	virtual void update() {}
 
@@ -23,6 +24,14 @@ public:
 	virtual void climbing(Animation* a)
 	{
 		DEBUG_MSG("State::Climbing");
+	}
+	virtual void redo(Animation* a)
+	{
+		DEBUG_MSG("Redo");
+	}
+	virtual void undo(Animation* a)
+	{
+		DEBUG_MSG("Undo");
 	}
 };
 

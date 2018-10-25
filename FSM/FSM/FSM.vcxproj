@@ -136,6 +136,7 @@
     <ClCompile Include="src\FSM\Jumping.cpp" />
     <ClCompile Include="src\GameObject\Player.cpp" />
     <ClCompile Include="src\Input\Input.cpp" />
+    <ClCompile Include="src\Input\MacroCommand.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\Animation\AnimatedSprite.h" />
@@ -146,7 +147,9 @@
     <ClInclude Include="Include\FSM\Jumping.h" />
     <ClInclude Include="Include\FSM\State.h" />
     <ClInclude Include="Include\GameObject\Player.h" />
+    <ClInclude Include="Include\Input\Command.h" />
     <ClInclude Include="Include\Input\Input.h" />
+    <ClInclude Include="Include\Input\MacroCommand.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

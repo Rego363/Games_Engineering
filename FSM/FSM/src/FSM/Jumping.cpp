@@ -16,3 +16,17 @@ void Jumping::climbing(Animation* a)
 	a->setCurrent(new Climbing());
 	delete this;
 }
+
+void Jumping::undo(Animation* a)
+{ 
+	std::cout << "Undo Jumping" << std::endl;
+	a->setCurrent(new Idle());
+	delete this;
+};
+
+void Jumping::redo(Animation* a)
+{
+	std::cout << "Redo Jumping" << std::endl;
+	a->setCurrent(new Jumping());
+	delete this;
+};
