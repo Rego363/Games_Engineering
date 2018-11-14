@@ -2,6 +2,7 @@
 #include <iostream>
 #include "Entity.h"
 #include <vector>
+#include <string>
 #include <iterator>
 
 class PositionSystem
@@ -24,7 +25,10 @@ public:
 			//for (; compIter != (*iter).getComponents().end(); compIter++)
 			for(std::shared_ptr<Component> compIter : (*iter).getComponents())
 			{
-				(*compIter).update();
+				if ((*compIter).id == 3)
+				{
+					auto c = dynamic_cast<PositionComponent *>(&(*compIter));
+				}
 			}
 		}
 
