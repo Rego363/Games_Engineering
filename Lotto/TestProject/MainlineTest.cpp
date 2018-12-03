@@ -39,14 +39,14 @@ int main()
 	vr.push_back(3);
 	vr.push_back(5);
 
-	for (int i = 0; i < v.size(); i++)
+	for (int i = 0; i < vr.size(); i++)
 	{
-		//assert(p.inRange(v[i]) == true);
+		//assert(p.inRange(vr[i]) == true);
 	}
 
-	assert(p.inRange(v) == true);
-	assert(p.noRepeats(v) == true);
-	assert(p.rightSize(v) == true);
+	assert(p.inRange(vr) == true);
+	assert(p.noRepeats(vr) == true);
+	assert(p.rightSize(vr) == true);
 
 
 	system("PAUSE");

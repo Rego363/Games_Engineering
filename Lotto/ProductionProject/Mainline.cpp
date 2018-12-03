@@ -4,6 +4,10 @@
 int main()
 {
 	Production p;
-	p.someMethod(10);
+	std::vector<int> ticket, winningNums;
+	ticket = p.takeInput();
+	winningNums = p.generateWinners();
+	p.checkTicket(ticket, winningNums);
+	system("PAUSE");
 	return 0;
 }
