@@ -23,26 +23,18 @@ bool Production::inRange(int a)
 	return true;
 }
 
-bool Production::inRange(std::vector<int> v)
-{
-	// Loop through elements
-	for (int i = 0; i < v.size(); i++)
-	{
-		// Over max
-		if (v[i] > 46)
-		{
+bool Production::inRange(std::vector<int> v){
+	for (int i = 0; i < v.size(); i++){ // Loop through elements
+		if (v[i] > 46){ // Over max
 			std::cout << "Element " << i + 1 << " on your ticket is over 46." << std::endl;
 			return false;
 		}
-		else if (v[i] < 1) // Under min
-		{
+		else if (v[i] < 1){ // Under min
 			std::cout << "Element " << i + 1 << " on your ticket is under 1." << std::endl;
 			return false;
 		}
 	}
-	
-	// All numbers in range
-	return true;
+	return true; // All numbers in range
 }
 
 bool Production::noRepeats(std::vector<int> v){
@@ -111,7 +103,8 @@ std::vector<int> Production::takeInput(){
 		else{	//33
 			cont = true;
 		}
-	}	// 36	return ans;
+	}	// 36	
+	return ans;
 };
 
 std::vector<int> Production::generateWinners()

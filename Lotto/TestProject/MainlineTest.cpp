@@ -44,9 +44,9 @@ int main()
 		//assert(p.inRange(vr[i]) == true);
 	}
 
-	assert(p.inRange(vr) == true);
-	assert(p.noRepeats(vr) == true);
-	assert(p.rightSize(vr) == true);
+	assert(p.inRange(vr) == false);
+	assert(p.noRepeats(vr) == false);
+	assert(p.rightSize(vr) == false);
 
 
 	system("PAUSE");

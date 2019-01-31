@@ -1,0 +1,5 @@
+﻿  Main.cpp
+c:\users\gameuser\desktop\game_engineering\prod_con_sych\prod_con_sych\main.cpp(55): error C2664: 'Player::Player(Player &&)': cannot convert argument 1 from 'Shared (__cdecl *)(void)' to 'Shared'
+  c:\users\gameuser\desktop\game_engineering\prod_con_sych\prod_con_sych\main.cpp(55): note: No constructor could take the source type, or constructor overload resolution was ambiguous
+c:\users\gameuser\desktop\game_engineering\prod_con_sych\prod_con_sych\main.cpp(59): error C2664: 'NPC::NPC(NPC &&)': cannot convert argument 1 from 'Shared (__cdecl *)(void)' to 'Shared'
+  c:\users\gameuser\desktop\game_engineering\prod_con_sych\prod_con_sych\main.cpp(59): note: No constructor could take the source type, or constructor overload resolution was ambiguous
