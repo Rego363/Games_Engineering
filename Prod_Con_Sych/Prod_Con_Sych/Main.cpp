@@ -1,5 +1,15 @@
 #include <iostream>
 #include <thread>
+#include <queue>
+#include <mutex>
+#include <condition_variable> 
+
+std::queue<int> q;
+
+std::mutex mx;
+std::condition_variable cv;
+
+bool finished = false;
 
 class Shared {
 	// This is a shared object between two processes
@@ -9,56 +19,46 @@ public:
 	int getValue() { return resources; }	// Get the value
 };
 
-class NPC : public std::thread {
-private:
-	Shared s;
-
-public:
-	NPC(Shared _s) {
-		s = _s;
-	}
-
-	void run()
-	{
-		while (true)
+void producer(int n) {
+	for (int i = 0; i<n; ++i) {
 		{
-			std::cout << "NPC..." << s.getValue() << std::endl;
-			s.increment();
+			std::lock_guard<std::mutex> lk(mx);
+			q.push(i);
+			std::cout << "pushing " << i << std::endl;
 		}
+		cv.notify_all();
 	}
-};
-
-class Player : public std::thread {
-private:
-	Shared s;
-
-public: 
-	Player(Shared _s)
 	{
-		s = _s;
+		std::lock_guard<std::mutex> lk(mx);
+		finished = true;
 	}
+	cv.notify_all();
+}
 
-	void run()
-	{
-		while (true)
-		{
-			std::cout << "Player..." << s.getValue() << std::endl;
-			s.increment();
+void consumer() {
+	while (true) {
+		std::unique_lock<std::mutex> lk(mx);
+		cv.wait(lk, [] { return finished || !q.empty(); });
+
+		while (!q.empty()) {
+			std::cout << "consuming " << q.front() << std::endl;
+			q.pop();
 		}
+		if (finished) break;
 	}
-};
+}
 
 int main()
 {
-	Shared * share = new Shared();
+	std::thread t1(producer, 10);
+	std::thread t2(consumer);
 
-	Player * p = new Player(*share);	// Create player
+	t1.join();
+	t2.join();
 
-	p->join();	// Start player thread
-
-	NPC * npc = new NPC(*share);	// Create NPC
-
-	npc->join();	// Start NPC thread
+	//p->join();	// Start player thread
+	//npc->join();	// Start NPC thread
+	system("PAUSE");
 
 	return 0;
 }
