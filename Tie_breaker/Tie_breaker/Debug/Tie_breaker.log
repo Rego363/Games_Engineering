@@ -1,0 +1,3 @@
+﻿  main.cpp
+c:\users\gameuser\desktop\game_engineering\tie_breaker\tie_breaker\main.cpp(13): warning C4018: '<': signed/unsigned mismatch
+  Tie_breaker.vcxproj -> C:\Users\gameuser\Desktop\Game_Engineering\Tie_breaker\Debug\Tie_breaker.exe

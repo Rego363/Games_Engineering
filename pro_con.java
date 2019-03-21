@@ -49,7 +49,7 @@ public class Threadexample
     public static class PC
     {
         LinkedList<Integer> list = new LinkedList<>();
-        int capacity = 2;
+        int capacity = 1;
 
         public void produce() throws InterruptedException
         {
@@ -94,4 +94,4 @@ public class Threadexample
             }
         }
     }
-} 
+}
